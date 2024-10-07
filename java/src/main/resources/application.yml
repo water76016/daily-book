@@ -1,0 +1,14 @@
+
+spring:
+  datasource:
+    driverClassName: org.postgresql.Driver
+    username: postgres
+    password: abc+!@#123
+    url: jdbc:postgresql://localhost:5432/daily-book
+    initialSize: 5
+    minIdle: 5
+    maxActive: 30
+    maxWait: 60000
+    showsql: true
+  port:
+    8888
