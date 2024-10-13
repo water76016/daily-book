@@ -12,3 +12,6 @@ spring:
     showsql: true
   port:
     8888
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
