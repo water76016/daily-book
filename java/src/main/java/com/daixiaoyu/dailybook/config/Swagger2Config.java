@@ -26,19 +26,19 @@
 //        return new Docket(DocumentationType.SWAGGER_2)
 //                .apiInfo(apiInfo())
 //                .select()
-//                .apis(RequestHandlerSelectors.basePackage("com.water76016.ourtask.controller"))
+//                .apis(RequestHandlerSelectors.basePackage("com.daixiaoyu.dailybook.controller"))
 //                .paths(PathSelectors.any())
-//                .build()
+//                .build();
 //                //添加登录认证
-//                .securitySchemes(securitySchemes())
-//                .securityContexts(securityContexts());
+////                .securitySchemes(securitySchemes())
+////                .securityContexts(securityContexts());
 //    }
 //
 //    private ApiInfo apiInfo() {
 //        return new ApiInfoBuilder()
 //                .title("SwaggerUI演示")
-//                .description("our-task")
-//                .contact(new Contact("water76016", null, null))
+//                .description("daily-book")
+//                .contact(new Contact("daixiaoyu", null, null))
 //                .version("1.0")
 //                .build();
 //    }

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.daixiaoyu.dailybook.mapper.AccountBookMapper">
+    <resultMap id="accountBook" type="com.daixiaoyu.dailybook.entity.AccountBook">
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+    <insert id="addAccountBook">
+        INSERT INTO public.account_book
+            (name, create_time, update_time)
+        VALUES(#{accountBook.name}, now(), now());
+    </insert>
+
+    <update id="updateAccount">
+        UPDATE public.account_book
+        SET "name"=#{accountBook.name}, update_time=now();
+        <where>
+            AND id = #{accountBook.id}
+        </where>
+    </update>
+
+    <delete id="deleteAccountBookById">
+        DELETE FROM public.account_book
+        <where>
+            id = #{id}
+        </where>
+    </delete>
+
+    <select id="queryAccountBook" resultMap="accountBook">
+
+    </select>
+</mapper>

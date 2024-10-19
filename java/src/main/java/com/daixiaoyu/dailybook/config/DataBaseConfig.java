@@ -103,7 +103,7 @@ public class DataBaseConfig {
             sessionFactoryBean.setDataSource(dataSource());
 
             //读取mybatis各个类的 *mapper.xml文件,这个地方的locationPattern一定要写对，不然会找不到输出到target\classes\mybatis\*目录下的mapper.xml文件
-            String locationPattern = "classpath*:/mybatis/*/*.xml";
+            String locationPattern = "classpath*:/mapper/**Mapper.xml";
             PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
             Resource[] resources = resolver.getResources(locationPattern);
             List<Resource> filterResourceList = new ArrayList<Resource>();

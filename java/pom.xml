@@ -26,10 +26,6 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
         <dependency>
@@ -60,17 +56,23 @@
             <optional>true</optional>
         </dependency>
         <!--mp-->
+
+<!--        <dependency>-->
+<!--            <groupId>com.baomidou</groupId>-->
+<!--            <artifactId>mybatis-plus-boot-starter</artifactId>-->
+<!--            <version>3.2.0</version>-->
+<!--        </dependency>-->
+<!--        &lt;!&ndash;        引入freemarker模板引擎供mp生成代码&ndash;&gt;-->
+<!--        &lt;!&ndash;mp代码生成器&ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.baomidou</groupId>-->
+<!--            <artifactId>mybatis-plus-generator</artifactId>-->
+<!--            <version>3.3.0</version>-->
+<!--        </dependency>-->
         <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>3.2.0</version>
-        </dependency>
-        <!--        引入freemarker模板引擎供mp生成代码-->
-        <!--mp代码生成器-->
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-generator</artifactId>
-            <version>3.3.0</version>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>2.1.4</version>
         </dependency>
         <!-- hutool工具类-->
         <dependency>
@@ -78,12 +80,33 @@
             <artifactId>hutool-all</artifactId>
             <version>5.3.3</version>
         </dependency>
-<!--        &lt;!&ndash;Swagger-UI API文档生产工具&ndash;&gt;-->
+        <!--Swagger-UI API文档生产工具-->
 <!--        <dependency>-->
 <!--            <groupId>io.springfox</groupId>-->
 <!--            <artifactId>springfox-boot-starter</artifactId>-->
 <!--            <version>3.0.0</version>-->
 <!--        </dependency>-->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.9.2</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.9.2</version>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.github.xiaoymin</groupId>-->
+<!--            <artifactId>knife4j-spring-boot-starter</artifactId>-->
+<!--            <version>3.0.3</version>-->
+<!--        </dependency>-->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>1.7.0</version>
+        </dependency>
+
         <!--redis依赖配置-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -110,11 +133,6 @@
             <artifactId>spring-boot-starter-data-redis</artifactId>
             <version>2.1.7.RELEASE</version>
         </dependency>
-        <!--        整合websocket-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
         <!-- 数据库连接池相关 -->
         <!-- https://mvnrepository.com/artifact/com.alibaba/druid -->
         <dependency>
@@ -136,6 +154,12 @@
     </dependencyManagement>
 
     <build>
+<!--        <resources>-->
+<!--            <resource>-->
+<!--                <directory>src/main/resources</directory>-->
+<!--                <filtering>true</filtering>-->
+<!--            </resource>-->
+<!--        </resources>-->
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

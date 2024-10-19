@@ -10,6 +10,6 @@ import org.apache.ibatis.annotations.Mapper;
  * @create: 2024-10-05 16:39
  **/
 @Mapper
-public class BillMapper {
+public interface BillMapper {
 
 }

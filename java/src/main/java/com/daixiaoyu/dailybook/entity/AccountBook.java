@@ -7,7 +7,7 @@ import java.util.Date;
 /**
  * @program: daily-book
  * @author: water76016
- * @description:
+ * @description: 账本
  * @version: v1.0.0
  * @create: 2024-10-05 14:24
  **/
