@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.daixiaoyu.dailybook.mapper.CategoryMapper">
+    <resultMap id="category" type="com.daixiaoyu.dailybook.entity.Categroy">
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="nature" column="nature"/>
+        <result property="parentId" column="parent_id"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+    <insert id="addCategory">
+        INSERT INTO public.category
+            ("name", nature, parent_id, create_time, update_time)
+        VALUES(#{category.name}, #{category.nature}, #{category.parentId}, now(), now());
+    </insert>
+
+    <delete id="deleteCategory">
+        DELETE FROM public.category
+        WHERE id = #{id}
+    </delete>
+
+    <update id="updateCategory">
+        UPDATE public.category
+        SET "name"=#{category.name}, nature=#{category.nature}, parent_id=#{category.parentId}, update_time=now()
+        <where>
+            id = #{category.id}
+        </where>
+    </update>
+
+    <select id="queryCategory" resultMap="category">
+        SELECT id, "name", nature, parent_id, create_time, update_time
+        FROM public.category
+    </select>
+</mapper>

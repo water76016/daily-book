@@ -17,9 +17,6 @@ import java.util.List;
  **/
 @Mapper
 public interface AccountBookMapper {
-//    @Insert("INSERT INTO public.account_book\n" +
-//            "            (name, create_time, update_time)\n" +
-//            "        VALUES(#{accountBook.name}, now(), now())")
     void addAccountBook(@Param("accountBook") AccountBook accountBook);
 
     void updateAccount(@Param("accountBook") AccountBook accountBook);

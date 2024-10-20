@@ -9,6 +9,7 @@ import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -20,14 +21,15 @@ import java.util.List;
  * @version: v1.0.0
  * @create: 2024-10-13 13:33
  **/
-@RestController(value = "/daily-book/account-book")
+@RestController
+@RequestMapping("/daily-book/account-book")
 public class AccountBookController {
     @Autowired
     private AccountBookService accountBookService;
 
     @ApiOperation("添加账本")
     @PostMapping("/add")
-    public RestResult addAccountBook(@RequestBody @ApiParam("用户对象")AccountBook accountBook){
+    public RestResult addAccountBook(@RequestBody AccountBook accountBook){
         try {
             accountBookService.addAccountBook(accountBook);
         }
@@ -39,7 +41,7 @@ public class AccountBookController {
 
     @ApiOperation("更新账本")
     @PostMapping("/update")
-    public RestResult updateAccount(@RequestBody @ApiParam("用户对象")AccountBook accountBook){
+    public RestResult updateAccount(@RequestBody AccountBook accountBook){
         try {
             accountBookService.updateAccount(accountBook);
         }
@@ -51,7 +53,7 @@ public class AccountBookController {
 
     @ApiOperation("删除账本")
     @PostMapping("/delete")
-    public RestResult deleteAccountBookById(@RequestBody @ApiParam("用户对象")AccountBook accountBook){
+    public RestResult deleteAccountBook(@RequestBody AccountBook accountBook){
         try {
             long id=accountBook.getId();
             accountBookService.deleteAccountBookById(id);

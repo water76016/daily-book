@@ -11,12 +11,12 @@
     <insert id="addAccountBook">
         INSERT INTO public.account_book
             (name, create_time, update_time)
-        VALUES(#{accountBook.name}, now(), now());
+        VALUES(#{accountBook.name}, now(), now())
     </insert>
 
     <update id="updateAccount">
         UPDATE public.account_book
-        SET "name"=#{accountBook.name}, update_time=now();
+        SET "name"=#{accountBook.name}, update_time=now()
         <where>
             AND id = #{accountBook.id}
         </where>
@@ -30,6 +30,7 @@
     </delete>
 
     <select id="queryAccountBook" resultMap="accountBook">
-
+        SELECT id, "name", create_time, update_time
+        FROM public.account_book
     </select>
 </mapper>

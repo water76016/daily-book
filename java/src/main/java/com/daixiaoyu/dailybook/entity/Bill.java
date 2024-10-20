@@ -2,6 +2,7 @@ package com.daixiaoyu.dailybook.entity;
 
 import lombok.Data;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -18,7 +19,22 @@ public class Bill {
     private long categoryId;
     private long cost;
     private String remark;
+    private Date occurTime;
+    private String occurTimeStr;
     private Date createTime;
     private Date updateTime;
+    private String accountBookName;
+    private String categoryName;
 
+    public String getOccurTimeStr() {
+        if (occurTime != null){
+            // 创建SimpleDateFormat对象，并设置日期格式和时区
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            // 如果需要指定时区，可以使用setTimeZone方法，例如：sdf.setTimeZone(TimeZone.getTimeZone("GMT+8"));
+
+            // 格式化日期
+            occurTimeStr = sdf.format(occurTime);
+        }
+        return occurTimeStr;
+    }
 }

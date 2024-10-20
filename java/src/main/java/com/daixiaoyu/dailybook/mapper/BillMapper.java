@@ -1,6 +1,11 @@
 package com.daixiaoyu.dailybook.mapper;
 
+import com.daixiaoyu.dailybook.entity.Bill;
+import com.daixiaoyu.dailybook.entity.Condition;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * @program: daily-book
@@ -11,5 +16,11 @@ import org.apache.ibatis.annotations.Mapper;
  **/
 @Mapper
 public interface BillMapper {
+    void addBill(@Param("bill")Bill bill);
 
+    void deleteBill(@Param("id") long id);
+
+    void updateBill(@Param("bill") Bill bill);
+
+    List<Bill> queryBill(@Param("condition") Condition condition);
 }
